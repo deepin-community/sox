@@ -1,3 +1,97 @@
+sox (14.4.2+git20190427-4) unstable; urgency=medium
+
+  * Team upload
+
+  [ Debian Janitor ]
+  * Update standards version to 4.6.1, no changes needed.
+  * Avoid explicitly specifying -Wl,--as-needed linker flag.
+  * Remove constraints unnecessary since buster (oldstable)
+
+  [ Sebastian Ramacher ]
+  * debian/control:
+    - Bump Standards-Version
+    - Bump debhelper compat to 13
+  * debian/patches: Refresh patches
+
+  [ Bastien Roucariès ]
+  * Add patch for CVE-2023-32627 (Closes: #1041112)
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sat, 11 Nov 2023 18:26:02 +0100
+
+sox (14.4.2+git20190427-3.5) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix regression in wav-gsm decodeing introduced via fixing CVE-2021-33844.
+    (Closes: #1032082)
+
+ -- Helmut Grohne <helmut@subdivi.de>  Sun, 12 Mar 2023 10:07:49 +0100
+
+sox (14.4.2+git20190427-3.4) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Ignore test failure on all mipsen (Addresses: #1030674)
+
+ -- Helmut Grohne <helmut@subdivi.de>  Tue, 07 Feb 2023 22:21:09 +0100
+
+sox (14.4.2+git20190427-3.3) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Ignore test failure on mips64el (Addresses: #1030674)
+
+ -- Helmut Grohne <helmut@subdivi.de>  Mon, 06 Feb 2023 13:02:25 +0100
+
+sox (14.4.2+git20190427-3.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Drop the CVE-unasssigned patch together with my own unnecessary change
+    introducing the vulnerability: The buffer is overallocated by 16-1 bytes
+    already and we don't overflow if we don't add to it.
+  * Replace CVE-2017-11358 patch with the non-broken one from upstream
+  * Fix big endian 64bit FTBFS: Import upstream patch to fix hcom writing
+  * Improve CVE-2021-23159 patch to also reject empty dictionaries.
+    The incomplete fix would allow an out-of-bounds read.
+  * Improve CVE-2021-3643 patch to also reject word width 1.
+    The incomplete fix would allow an out-of-bounds read.
+
+ -- Helmut Grohne <helmut@subdivi.de>  Sun, 05 Feb 2023 13:13:59 +0100
+
+sox (14.4.2+git20190427-3.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix some resource leaks.
+  * Fix regression in hcom reader introduced via CVE-2017-11358. (Closes:
+    #933372)
+  * Enable test suite.
+  * Fix CVE-2021-3643 and CVE-2021-23210: voc validation (Closes: #1010374)
+  * Fix CVE-2021-23159 and CVE-2021-23172: hcom validation
+    (Closes: #1021133, #1021134)
+  * Fix CVE-2021-33844: wav validation (Closes: #1021135)
+  * Fix CVE-2021-40426: sphere validation (Closes: #1012138)
+  * Fix CVE-2022-31650: aiff validation (Closes: #1012516)
+  * Fix CVE-2022-31651: reject implausible rate (Closes: #1012516)
+  * Fix CVE-unasssigned: integer overflow
+  * Silence dh_missing
+  * Add an autopkgtest
+
+ -- Helmut Grohne <helmut@subdivi.de>  Fri, 03 Feb 2023 10:21:33 +0100
+
+sox (14.4.2+git20190427-3) unstable; urgency=medium
+
+  * Team upload
+
+  [ Debian Janitor ]
+  * Drop no longer supported add-log-mailing-address setting from
+    debian/changelog.
+  * Fix day-of-week for changelog entries 12.16-1, 12.14-1, 11gamma-cb3-
+    5, 11gamma-cb3-4.
+
+  [ Sebastian Ramacher ]
+  * debian/control:
+    - Bump Standards-Version
+    - Replace libltdl3-dev with libltdl-dev
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Wed, 06 Apr 2022 10:10:57 +0200
+
 sox (14.4.2+git20190427-2) unstable; urgency=medium
 
   [ Ondřej Nový ]
@@ -887,7 +981,7 @@ sox (12.16-1) unstable; urgency=low
     moved to debhelper, added libst.a to package, fixed #40849
     stereo to mono conversion does not work.
 
- -- Guenter Geiger <geiger@debian.org>  Tue, 22 Jul 1999 14:30:00 +0200
+ -- Guenter Geiger <geiger@debian.org>  Thu, 22 Jul 1999 14:30:00 +0200
 
 sox (12.15-2) unstable; urgency=low
 
@@ -911,7 +1005,7 @@ sox (12.14-1) unstable; urgency=low
 
   * new upstream version with most of Debian patches included
 
- -- Geiger Guenter <geiger@iem.mhsg.ac.at>  Tue, 18 May 1998 8:50:00 +0100
+ -- Geiger Guenter <geiger@iem.mhsg.ac.at>  Mon, 18 May 1998 08:50:00 +0100
 
 
 sox (11gamma-cb3-5) unstable; urgency=low
@@ -919,14 +1013,14 @@ sox (11gamma-cb3-5) unstable; urgency=low
   * Close bug Bug#18608: sox: postinst script failure
     Bug#18623: sox: bad postinst
 
- -- Geiger Guenter <geiger@iem.mhsg.ac.at>  Sun, 26 Feb 1998 8:50:00 +0100
+ -- Geiger Guenter <geiger@iem.mhsg.ac.at>  Thu, 26 Feb 1998 08:50:00 +0100
 
 
 sox (11gamma-cb3-4) unstable; urgency=low
 
   * Close bug Bug#18150: register "play" with mime-support
 
- -- Geiger Guenter <geiger@iem.mhsg.ac.at>  Sun, 13 Feb 1998 12:05:00 +0100
+ -- Geiger Guenter <geiger@iem.mhsg.ac.at>  Fri, 13 Feb 1998 12:05:00 +0100
 
 sox (11gamma-cb3-3) unstable; urgency=low
 
@@ -962,7 +1056,3 @@ sox (11gamma-cb3-0.0) unstable; urgency=low
   * Closes bugs #9451, #11724.
 
  -- Joey Hess <joeyh@master.debian.org>  Sat, 30 Aug 1997 20:48:47 -0400
-
-Local variables:
-mode: debian-changelog
-End:

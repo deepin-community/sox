@@ -1,11 +1,21 @@
-Description: spelling fixes
-Author: Jaromír Mikeš <mira.mikes@seznam.cz>
-Forwarded: sox-devel@lists.sourceforge.net
+From: =?utf-8?b?SmFyb23DrXIgTWlrZcWh?= <mira.mikes@seznam.cz>
+Date: Sat, 11 Nov 2023 18:18:40 +0100
+Subject: spelling fixes
 
-Index: sox/ChangeLog
-===================================================================
---- sox.orig/ChangeLog
-+++ sox/ChangeLog
+Forwarded: sox-devel@lists.sourceforge.net
+---
+ ChangeLog  | 2 +-
+ libsox.3   | 2 +-
+ libsox.txt | 2 +-
+ src/fap.c  | 2 +-
+ src/paf.c  | 2 +-
+ src/wav.c  | 2 +-
+ 6 files changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/ChangeLog b/ChangeLog
+index 809b43f..dc79b9a 100644
+--- a/ChangeLog
++++ b/ChangeLog
 @@ -972,7 +972,7 @@ sox-12.18.1	2006-05-07
  
    o The "filter" effect could go into infinite drain mode.  Now
@@ -15,11 +25,11 @@ Index: sox/ChangeLog
      effect drain operations.  This was bad if effects had
      bugs and stuck in infinite loop.
    o Stop SoX from crashing when file type could not be auto
-Index: sox/libsox.3
-===================================================================
---- sox.orig/libsox.3
-+++ sox/libsox.3
-@@ -175,7 +175,7 @@ failures. Currently, relies on \fBsox_wa
+diff --git a/libsox.3 b/libsox.3
+index 1233bc7..2af8448 100644
+--- a/libsox.3
++++ b/libsox.3
+@@ -175,7 +175,7 @@ failures. Currently, relies on \fBsox_warn\fR to print information.
  successfully read or written. If an error occurs, or the end-of-file
  is reached, the return value is a short item count or SOX_EOF. TODO:
  \fBsox_read\fR does not distiguish between end-of-file and error. Need
@@ -28,10 +38,10 @@ Index: sox/libsox.3
  .P
  Upon successful completion \fBsox_close\fR returns 0. Otherwise, SOX_EOF
  is returned. In either case, any further access (including another
-Index: sox/libsox.txt
-===================================================================
---- sox.orig/libsox.txt
-+++ sox/libsox.txt
+diff --git a/libsox.txt b/libsox.txt
+index dc627fc..742c654 100644
+--- a/libsox.txt
++++ b/libsox.txt
 @@ -148,7 +148,7 @@ RETURN VALUE
         or  written.  If  an  error  occurs, or the end-of-file is reached, the
         return value is a short item count or SOX_EOF. TODO: sox_read does  not
@@ -41,10 +51,10 @@ Index: sox/libsox.txt
  
         Upon successful completion sox_close returns 0. Otherwise,  SOX_EOF  is
         returned. In either case, any further access (including another call to
-Index: sox/src/fap.c
-===================================================================
---- sox.orig/src/fap.c
-+++ sox/src/fap.c
+diff --git a/src/fap.c b/src/fap.c
+index cc32a1a..6cb2521 100644
+--- a/src/fap.c
++++ b/src/fap.c
 @@ -26,7 +26,7 @@ LSX_FORMAT_HANDLER(fap)
    static sox_format_handler_t handler;
    handler = *lsx_sndfile_format_fn();
@@ -54,10 +64,10 @@ Index: sox/src/fap.c
    handler.names = names;
    handler.write_formats = write_encodings;
    return &handler;
-Index: sox/src/paf.c
-===================================================================
---- sox.orig/src/paf.c
-+++ sox/src/paf.c
+diff --git a/src/paf.c b/src/paf.c
+index e8e4c32..b1c5174 100644
+--- a/src/paf.c
++++ b/src/paf.c
 @@ -26,7 +26,7 @@ LSX_FORMAT_HANDLER(paf)
    static sox_format_handler_t handler;
    handler = *lsx_sndfile_format_fn();
@@ -67,11 +77,11 @@ Index: sox/src/paf.c
    handler.names = names;
    handler.write_formats = write_encodings;
    return &handler;
-Index: sox/src/wav.c
-===================================================================
---- sox.orig/src/wav.c
-+++ sox/src/wav.c
-@@ -442,7 +442,7 @@ static int findChunk(sox_format_t * ft,
+diff --git a/src/wav.c b/src/wav.c
+index 5202556..d935958 100644
+--- a/src/wav.c
++++ b/src/wav.c
+@@ -442,7 +442,7 @@ static int findChunk(sox_format_t * ft, const char *Label, uint64_t *len)
              }
              else
              {

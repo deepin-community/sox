@@ -4,13 +4,22 @@
 #export DH_VERBOSE=1
 
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
-export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+
+# Ignore test failure on mipsen, see #1030674
+IGNORE_TEST_FAILURE=
+ifneq (,$(filter mips%,$(DEB_BUILD_ARCH)))
+	IGNORE_TEST_FAILURE=-
+endif
 
 %:
 	dh $@
 
 override_dh_auto_configure:
 	dh_auto_configure -- --with-distro="$(shell dpkg-vendor --query vendor)" --with-dyn-default
+
+override_dh_auto_test:
+	$(IGNORE_TEST_FAILURE)env -C src sh tests.sh
+	$(IGNORE_TEST_FAILURE)env -C src sh testall.sh
 
 override_dh_bugfiles:
 	dh_bugfiles -A
