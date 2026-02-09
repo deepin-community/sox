@@ -1,4 +1,5 @@
 libsox.so.3 libsox3 #MINVER#
+* Build-Depends-Package: libsox-dev
  lsx_check_read_params@Base 14.4.2~
  lsx_close_dllibrary@Base 14.4.2~
  lsx_debug_impl@Base 14.4.2~
@@ -91,4 +92,3 @@ libsox.so.3 libsox3 #MINVER#
  sox_version_info@Base 14.4.2~
  sox_write@Base 14.4.2~
  sox_write_handler@Base 14.4.2~
-

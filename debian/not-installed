@@ -1,0 +1,2 @@
+usr/lib/*/libsox.la
+usr/lib/*/sox/libsox_fmt_*.la
