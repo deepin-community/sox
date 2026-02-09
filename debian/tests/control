@@ -1,0 +1,2 @@
+Test-Command: ln -s /bin/true $AUTOPKGTEST_TMP/sox_sample_test && ./src/tests.sh --bindir=/usr/bin --builddir=$AUTOPKGTEST_TMP --srcdir=src
+Depends: sox, time

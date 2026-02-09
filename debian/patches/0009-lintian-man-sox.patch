@@ -1,0 +1,27 @@
+From: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Date: Sat, 11 Nov 2023 18:18:40 +0100
+Subject: Fix - W: sox: manpage-has-errors-from-man
+ usr/share/man/man1/sox.1.gz  file `<standard input>'
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Jaromír Mikeš <mira.mikes@seznam.cz>
+Forwarded: sox-devel@lists.sourceforge.net
+---
+ sox.1 | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/sox.1 b/sox.1
+index 2c4ca47..4241862 100644
+--- a/sox.1
++++ b/sox.1
+@@ -2699,7 +2699,7 @@ as detailed in the following table:
+ .ne 6
+ .TS
+ center;
+-lB lw52.
++lB lw51.
+ \-M/\-I/\-L	Phase response = minimum/intermediate/linear
+ \-s	Steep filter (band-width = 99%)
+ \-a	Allow aliasing/imaging above the pass-band
